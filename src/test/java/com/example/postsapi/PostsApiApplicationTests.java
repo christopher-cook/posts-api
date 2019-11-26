@@ -8,6 +8,7 @@ class PostsApiApplicationTests {
 
 	@Test
 	void contextLoads() {
+
 	}
 
 }
