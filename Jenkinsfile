@@ -24,15 +24,15 @@ pipeline {
                 }
             }
         }
-//         stage('Coverage') {
-//             steps {
-//                 sh 'mvn clean package jacoco:report'
-//             }
-//             post {
-//                 always {
-//                     publishCoverage adapters: [jacocoAdapter('target/site/jacoco/jacoco.xml')]
-//                 }
-//             }
-//         }
+        stage('Coverage') {
+            steps {
+                sh 'mvn clean package jacoco:report'
+            }
+            post {
+                always {
+                    publishCoverage adapters: [jacocoAdapter('target/site/jacoco/jacoco.xml')]
+                }
+            }
+        }
     }
 }
