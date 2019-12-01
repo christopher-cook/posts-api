@@ -47,6 +47,7 @@ public class PostServiceTest {
 
   private User testUser;
   private Post testPost;
+  private Comment testComment;
 
   @Before
   public void initData() {
@@ -55,6 +56,8 @@ public class PostServiceTest {
     testPost.setTitle("test");
     testPost.setDescription("test");
     testPost.setUser(testUser);
+
+    testComment = new Comment(1L, "test", 1L);
   }
 
   @Test
@@ -81,6 +84,9 @@ public class PostServiceTest {
   public void getCommentsByPostId_Comments_Success() {
     Comment testComment = new Comment();
     testComment.setText("test");
+    testComment.setId(1L);
+    testComment.setUser_id(1L);
+
     List<Comment> listComments = new ArrayList<>();
     listComments.add(testComment);
 
