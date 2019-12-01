@@ -9,6 +9,8 @@ public class Comment {
 
   private User user;
 
+  public Comment() {}
+
   public Comment (Long id, String text, Long user_id) {
     this.id = id;
     this.text = text;

@@ -24,14 +24,4 @@ public class CommentRepository {
 
     return comments;
   }
-
-
-
-//  public List<Long> getSongsByUser(long userId){
-//    List<Long> songIds = new ArrayList<>();
-//    jdbcTemplate.query("select song_id from user_song where " +
-//            "user_id = ?", new Object[]{userId},
-//        (rs, num) -> songIds.add(rs.getLong("song_id")));
-//    return songIds;
-//  }
 }

@@ -31,7 +31,6 @@ public class PostServiceImpl implements PostService{
     public Iterable<Post> listPosts() {
         Iterable foundPosts = postRepository.findAll();
 
-//        TODO: iterate over posts and add userbean to each post;
         for (Object post : foundPosts) {
             Post casted = (Post) post;
             Long user_id = casted.getUser_id();
@@ -46,8 +45,6 @@ public class PostServiceImpl implements PostService{
     @Override
     public Post createPost(String userId, Post post) {
         Long user_id = Long.parseLong(userId, 10);
-        System.out.println(user_id);
-
         post.setUser_id(user_id);
         return postRepository.save(post);
     }
@@ -70,14 +67,14 @@ public class PostServiceImpl implements PostService{
         try {
             postRepository.deleteById(postId);
             sender.send(Long.toString(postId));
-        } catch (Exception e){
+        } catch (Exception e) {
             throw new EntityNotFoundException("Post does not exist");
         }
         return "success";
     }
 
     @Override
-    public Post updatePost(Long postId, Post post) throws EntityNotFoundException{
+    public Post updatePost(Long postId, Post post) throws EntityNotFoundException {
         Post existingPost = null;
         try {
             existingPost = postRepository.findById(postId).get();
