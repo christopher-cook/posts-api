@@ -62,6 +62,12 @@ public class PostServiceImpl implements PostService{
         return comments;
     }
 
+    /**
+     *
+     * @param postId String
+     * @return "success"
+     * @throws EntityNotFoundException
+     */
     @Override
     public String deletePost(Long postId) throws EntityNotFoundException {
         try {

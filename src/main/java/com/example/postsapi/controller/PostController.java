@@ -19,6 +19,12 @@ public class PostController {
         return postService.listPosts();
     }
 
+    /**
+     *
+     * @param userId String
+     * @param post Object
+     * @return new Post
+     */
     @PostMapping("/")
     public Post createPost(@RequestHeader("userId") String userId, @RequestBody Post post) {
         return postService.createPost(userId, post);
