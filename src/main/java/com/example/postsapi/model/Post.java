@@ -32,10 +32,18 @@ public class Post {
         this.id = id;
     }
 
+    /**
+     *
+     * @return title
+     */
     public String getTitle() {
         return title;
     }
 
+    /**
+     *
+     * @param title String
+     */
     public void setTitle(String title) {
         this.title = title;
     }
