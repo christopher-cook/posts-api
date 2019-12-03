@@ -9,6 +9,7 @@ import com.example.postsapi.repository.CommentRepository;
 import com.example.postsapi.repository.PostRepository;
 import com.example.postsapi.repository.UserRepository;
 import java.util.List;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
